@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pistol
   damage: 20
-  shotGunBullet: 0
+  shotGunBulletEnabled: 0
   bulletSpread: 0
   bulletSpeed: 20
+  bulletPelletsAmount: 0
   currentAmmo: 0
   magSize: 8
-  fireRate: 120
+  fireRate: 300
   reloadTime: 0.8
   reloading: 0
   BulletPrefab: {fileID: 6855059145253165530, guid: 5f3731d33e2aff548b6fd710c04172cf, type: 3}
-  MuzzleflashPrefab: {fileID: 0}
-  firePoint: {fileID: 1606835563311239123, guid: e1ad07efa3402c44b9e48c8831a6eabd, type: 3}
+  MuzzleflashPrefab: {fileID: 3962613992559866101, guid: db9c7b06f1bac6b4ebe337314e6417e0, type: 3}
+  shootSound: ShootPistol

@@ -28,4 +28,7 @@ public class GunData : ScriptableObject
     [Header("Visuals")]
     public GameObject BulletPrefab;
     public GameObject MuzzleflashPrefab;
+
+    [Header("Audio")]
+    public string shootSound;
 }

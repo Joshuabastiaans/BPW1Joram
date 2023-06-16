@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: ShotGun
   damage: 60
-  shotGunBulletEnabled: 0
+  shotGunBulletEnabled: 1
   bulletSpread: 1
-  bulletSpeed: 0
+  bulletSpeed: 20
   bulletPelletsAmount: 0
-  currentAmmo: 7
-  magSize: 7
-  fireRate: 70
+  currentAmmo: 0
+  magSize: 4
+  fireRate: 60
   reloadTime: 1
   reloading: 0
   BulletPrefab: {fileID: 6855059145253165530, guid: 5f3731d33e2aff548b6fd710c04172cf, type: 3}
   MuzzleflashPrefab: {fileID: 3962613992559866101, guid: db9c7b06f1bac6b4ebe337314e6417e0, type: 3}
+  shootSound: ShootShotgun

@@ -21,10 +21,14 @@ public class Gun : MonoBehaviour
 
     [SerializeField] private PlayerInputSystem playerControls;
 
+    private AudioManager audioManager;
 
     private void Awake()
     {
         playerControls = new PlayerInputSystem();
+        audioManager = FindObjectOfType<AudioManager>();
+
+        gunData.currentAmmo = gunData.magSize;
     }
 
     private void OnEnable()
@@ -53,12 +57,14 @@ public class Gun : MonoBehaviour
     private IEnumerator Reload()
     {
         gunData.reloading = true;
+        audioManager.Play("Reload");
 
         yield return new WaitForSeconds(gunData.reloadTime);
 
         gunData.currentAmmo = gunData.magSize;
 
         gunData.reloading = false;
+
     }
 
     private bool CanShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f);
@@ -73,23 +79,29 @@ public class Gun : MonoBehaviour
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                 rb.AddForce(firePoint.up * gunData.bulletSpeed, ForceMode2D.Impulse);
 
-                //GameObject bulletMuzzleFlash = Instantiate(bulletMuzzleFlashPrefab, firePoint.position, firePoint.rotation);
 
                 animator.SetTrigger("Fire");
                 Debug.Log("Fired");
 
                 gunData.currentAmmo--;
                 timeSinceLastShot = 0;
-                OnGunShot();
+                audioManager.Play(gunData.shootSound);
+                StartCoroutine(SpawnMuzzleFlash(firePoint));
             }
         }
+    }
+
+    private IEnumerator SpawnMuzzleFlash(Transform spawnPoint)
+    {
+        Quaternion muzzleRotation = spawnPoint.rotation * Quaternion.Euler(0f, 0f, 90f);
+        Vector3 muzzleLocation = spawnPoint.position + spawnPoint.up * .5f;
+        GameObject muzzleFlash = Instantiate(gunData.MuzzleflashPrefab, muzzleLocation, muzzleRotation);
+        yield return new WaitForSeconds(.1f);
+        Destroy(muzzleFlash);
     }
 
     private void Update()
     {
         timeSinceLastShot += Time.deltaTime;
-
     }
-
-    private void OnGunShot() { }
 }

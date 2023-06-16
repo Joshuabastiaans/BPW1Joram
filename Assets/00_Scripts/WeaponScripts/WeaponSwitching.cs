@@ -99,9 +99,8 @@ public class WeaponSwitching : MonoBehaviour
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i].gameObject.SetActive(i == weaponIndex);
-            switchAnimation.SwitchAnimator(selectedWeapon);
-            shootPlayer.SetGun(selectedWeapon);
         }
+        switchAnimation.SwitchAnimator(selectedWeapon);
         timeSinceLastSwitch = 0f;
     }
 }
