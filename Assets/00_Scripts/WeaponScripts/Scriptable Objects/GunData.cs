@@ -10,7 +10,7 @@ public class GunData : ScriptableObject
     public new string name;
 
     [Header("Shooting")]
-    public float damage;
+    public int damage;
 
     [Header("Shotgun")]
     public bool shotGunBulletEnabled;

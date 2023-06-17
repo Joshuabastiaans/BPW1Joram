@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   name: ShotGun
-  damage: 60
+  damage: 5
   shotGunBulletEnabled: 1
   bulletSpread: 1
   bulletSpeed: 20
   bulletPelletsAmount: 0
-  currentAmmo: 0
+  currentAmmo: 4
   magSize: 4
   fireRate: 60
   reloadTime: 1

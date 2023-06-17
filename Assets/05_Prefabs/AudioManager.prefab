@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6876597079647298400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6876597079647298430}
+  - component: {fileID: 6876597079647298401}
+  - component: {fileID: 6876597079647298431}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6876597079647298430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876597079647298400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.811736, y: 4.1264086, z: -1.2848153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6876597079647298401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876597079647298400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c766cdb0d2bae424ab3d8262be49bda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+  sounds:
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: a104a80a554d137489fde7b763df14b2, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+  - name: Running
+    clip: {fileID: 8300000, guid: 5f4c38e9dbf51024b92a4ae20cb6d312, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+  - name: ZombieAttacking
+    clip: {fileID: 8300000, guid: 695c3739d8c7f3b42b94f4a0c2ffde67, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+  - name: ShootPistol
+    clip: {fileID: 8300000, guid: 20c7a65008b1c1342aabfc01e59c6bd2, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+  - name: ShootShotgun
+    clip: {fileID: 8300000, guid: 497e2d32f1f1d6c4e9e65b3caa51dc2d, type: 3}
+    volume: 0.7
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+  - name: Reload
+    clip: {fileID: 8300000, guid: d4e7010956db59b43a4a2b09894bfdfa, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+  - name: EvilLaugh
+    clip: {fileID: 8300000, guid: d2fce0cb446fcf84db3c0b0200badaf9, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: b6fa2744c3c557f4bb23d6b8b5fa776e, type: 2}
+    source: {fileID: 0}
+--- !u!114 &6876597079647298431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876597079647298400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5472a060beff79f41836aad73d93d39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioName: BackgroundMusic

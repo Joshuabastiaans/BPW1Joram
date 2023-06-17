@@ -21,14 +21,16 @@ public class WeaponSwitching : MonoBehaviour
     private InputAction SelectWeapon;
 
     public switchAnimation switchAnimation;
-    public ShootPlayer shootPlayer;
+
+    GunHUD gunHUD;
+
     private void Awake()
     {
-        shootPlayer = GetComponent<ShootPlayer>();
         playerControls = new PlayerInputSystem();
 
         ScrollWeapon = playerControls.Player.ScrollWeapon;
         SelectWeapon = playerControls.Player.SelectWeapon;
+        gunHUD = GetComponent<GunHUD>();
     }
 
     private void OnEnable()
@@ -102,5 +104,6 @@ public class WeaponSwitching : MonoBehaviour
         }
         switchAnimation.SwitchAnimator(selectedWeapon);
         timeSinceLastSwitch = 0f;
+        gunHUD.SetActiveGun(selectedWeapon);
     }
 }

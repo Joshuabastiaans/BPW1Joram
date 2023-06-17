@@ -124,4 +124,9 @@ public class ZombieMovement : MonoBehaviour
             currentState = ZombieState.Idle;
         }
     }
+
+    public void SetRunningSpeed(int Speed)
+    {
+        moveSpeed = Speed;
+    }
 }

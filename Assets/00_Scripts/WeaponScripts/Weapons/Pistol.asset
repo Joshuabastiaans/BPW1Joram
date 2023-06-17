@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   name: Pistol
-  damage: 20
+  damage: 3
   shotGunBulletEnabled: 0
   bulletSpread: 0
   bulletSpeed: 20
   bulletPelletsAmount: 0
-  currentAmmo: 0
+  currentAmmo: 7
   magSize: 8
   fireRate: 300
   reloadTime: 0.8

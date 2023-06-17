@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour
 {
 
     [Header("References")]
-    [SerializeField] private GunData gunData;
+    public GunData gunData;
     [SerializeField] private Transform cam;
     [SerializeField] private Transform firePoint;
     
@@ -78,10 +78,9 @@ public class Gun : MonoBehaviour
                 GameObject bullet = Instantiate(gunData.BulletPrefab, firePoint.position, firePoint.rotation);
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                 rb.AddForce(firePoint.up * gunData.bulletSpeed, ForceMode2D.Impulse);
-
+                bullet.GetComponent<Bullet>().SetDamage(gunData.damage);
 
                 animator.SetTrigger("Fire");
-                Debug.Log("Fired");
 
                 gunData.currentAmmo--;
                 timeSinceLastShot = 0;

@@ -14,11 +14,13 @@ public class Health : MonoBehaviour
     [SerializeField] private Image heartPrefab;
     [SerializeField] private Transform heartsContainer;
     [SerializeField] private float heartSpacing = 20f;
+    private AudioManager audioManager;
 
     private void Start()
     {
         currentHealth = maxHealth;
         UpdateHealthUI();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -28,7 +30,9 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             //restart level
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            audioManager.Play("EvilLaugh");
+            SceneManager.LoadScene(1);
+
         }
 
         UpdateHealthUI();
